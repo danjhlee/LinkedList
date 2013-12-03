@@ -16,6 +16,10 @@ typedef struct list
 void list_insert(int value, list *start);
 void list_delete(int value, list *start);
 void list_print(list *start);
+void list_free(list *start);
+list *list_median(list *start);
+list *list_reverse(list *start);
+list *mergeLinkedList(list *a, list *b);
 
 /*
  * Creating a sorted Linked List
