@@ -108,24 +108,21 @@ list *list_median(list *start)
 /*
  * Reversing the Linked List
  */
-list *list_reverse(list *start)
+void list_reverse(list **startRef)
 {
 	list *previous, *current, *next;
-	list *reverse;
 
 	previous = NULL;
-	current = start;
+	current = *startRef;
 
-	while (current != NULL) {
+	while (current != NULL) 
+	{
 		next = current->next;
 		current->next = previous;
 		previous = current;
 		current = next;
 	}
-	reverse = (list *)calloc(1, sizeof(list));
-	reverse->next = previous;
-
-	return reverse;
+	*startRef = previous;
 }
 
 /*
